@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Channels } from './components/channels';
+import { channels } from './models';
+import { useBackend } from '@deutschesoft/use-aux-widgets';
+import { LocalBackend } from '@deutschesoft/awml/src/index.pure';
+
+function createLocalBackend() {
+  return new LocalBackend({ });
+}
 
 function App() {
+
+  const [ backend, ] = useBackend('local', createLocalBackend);
+
+  console.log('backend %o active', backend);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Channels channels={ channels } />
     </div>
   );
 }
 
-export default App;
+export default App

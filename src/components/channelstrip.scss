@@ -1,0 +1,40 @@
+.channelstrip {
+  display: grid;
+  grid-template-areas:
+    "equalizer equalizer"
+    "label label"
+    "fader meter"
+    "mute mute";
+  grid-template-rows: 150px auto 1fr auto;
+  grid-gap: 4px;
+  justify-items: stretch;
+
+  &.interacting {
+    //border: 1px solid grey;
+  }
+
+  &.muted {
+    opacity: 0.5;
+  }
+
+  > .equalizer {
+    grid-area: equalizer;
+  }
+
+  > .label {
+    grid-area: label;
+  }
+  > .fader {
+    grid-area: fader;
+
+    > .aux-track::before {
+      opacity: var(--fader-track-opacity);
+    }
+  }
+  > .meter {
+    grid-area: meter;
+  }
+  > .mute {
+    grid-area: mute;
+  }
+}
