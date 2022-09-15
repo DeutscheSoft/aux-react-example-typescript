@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@deutschesoft/aux-widgets": "^1.1.2",
+    "@deutschesoft/aux-widgets": "^1.2.1",
     "@deutschesoft/awml": "^2.2.2",
     "@deutschesoft/use-aux-widgets": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
